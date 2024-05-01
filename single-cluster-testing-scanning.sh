@@ -17,7 +17,7 @@ mv  /tmp/shepherd-lease.json /tmp/shepherd-lease-$lease_id.json
 
 echo "🔗 Kubeconfig (/tmp/kube-config-$lease_id.yaml) exported for use with Kubectl and Tanzu CLI"
 cat /tmp/shepherd-lease-$lease_id.json | jq -r .output.kubeconfig > /tmp/kube-config-$lease_id.yaml
-export KUBECONFIG=/tmp/$lease_id-kube-config.yaml
+export KUBECONFIG=/tmp/kube-config-$lease_id.yaml
 
 echo "🏷️ Labeling the 'my-apps' for Namespace Provisioner"
 kubectl label namespaces my-apps apps.tanzu.vmware.com/tap-ns=""
