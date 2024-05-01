@@ -8,3 +8,6 @@ echo "Leases are stored in $leases"
 ./helpers/create-state-files.sh $leases
 ./helpers/multi-cluster-configure.sh $leases
 ./helpers/multi-cluster-create-workloads.sh $leases
+# TODO
+# Re running script as a hack to ensure TAP-GUI is able to access the Run Cluster.
+./helpers/multi-cluster-configure.sh $leases

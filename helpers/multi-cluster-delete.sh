@@ -14,4 +14,6 @@ if [ ! -f "$leases" ]; then
     exit 1
 fi
 
-cat $leases | xargs -I lease_id shepherd delete lease lease_id 
+cat $leases | xargs -I lease_id shepherd delete lease lease_id
+
+rm $leases
