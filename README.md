@@ -7,10 +7,20 @@ Scripts for creating Tanzu Application Platform environments using Shepherd
 ```
 ./multi-cluster-tap.sh
 ```
-Create a multi-cluster View, Full and Run Profile TAP environment with sample workloads.
+Creates a Multi Cluster TAP environment with;
+- A View profile cluster
+- A Full profile cluster (This also serves as the Build cluster)
+- A Run profile cluster
+- 10 sample workloads deployed to the Full profile and Run profile clusters
+- TAP GUI on View cluster configured to observe the Full and Run clusters.
+- Testing and Scanning SupplyChain configured on Full profile cluster.
 
 ## Configuration
-The script above can be run as-is. However, its recommended you create your own Shepherd namespace and replace the default value in `multi-cluster-create.sh`. Similarly, the lease time defaults to 5 days and can be adjusted in `multi-cluster-create.sh` under `LEASE_DURATION`.
+The script above can be run as-is.
+
+However, its recommended you create your own Shepherd namespace and replace the default value in `multi-cluster-create.sh`. 
+
+The Shepherd lease time defaults to 5 days and can be adjusted in `multi-cluster-create.sh` by setting `LEASE_DURATION`.
 
 ## Cleanup
 ```
